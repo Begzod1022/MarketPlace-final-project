@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'UniSansHeavy';
+    src: url('UniSansHeavy.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'UniSansThin';
+    src: url('UniSansThin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'YanoneBold';
+    src: url('/Font/YanoneKaffeesatz/YanoneRegular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'InterBlack';
+    src: url('/Font/Inter/Inter_18pt-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'InterBold';
+    src: url('/Font/Inter/Inter_18pt-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'InterRegular';
+    src: url('/Font/Inter/Inter_18pt-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'InterMedium';
+    src: url('/Font/Inter/Inter_18pt-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'InterSemiBold';
+    src: url('/Font/Inter/Inter_18pt-SemiBold.ttf') format('truetype');
+}

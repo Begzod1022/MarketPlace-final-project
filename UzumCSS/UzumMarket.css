@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'InterMedium', sans-serif;
+}
+
+body {
+    padding-inline: 7%;
+    padding-top: 1%;
+}
+
+/* header */
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.UserActions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 400;
+        text-decoration: none;
+        color: #99A3AE;
+
+        &:hover {
+            color: #9d00ff;
+            transition: ease-in-out 0.2s;
+        }
+    }
+}
+
+.userAccout, .orders, .korzina, .favorites {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.header__icon {
+    height: 22px;
+    width: auto;
+    cursor: pointer;
+
+    .korzina {
+        img {
+            width: 32px;
+        }
+    }
+}
+
+.logotypeAndCatalogue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CatalogueButton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-inline: 30px;
+    padding-block: 13px;
+    border: none;
+    background-color: #9d00ff;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+
+    span {
+        font-size: 14px;
+        font-family: 'InterSemiBold';
+    }
+}
+
+.SearchBar {
+    width: 100%;
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin: auto;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        transition: border-color 0.3s;
+
+        &:focus {
+            border-color: #9d00ff;
+            outline: none;
+        }
+    }
+}
+
+/* location and language */
+
+.locationAndlanguageDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.locationAndLanguage {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 400;
+
+    span {
+        font-family: 'InterBold';
+        color: #8d8a8f;
+    
+    }
+}
+
+.changeCityA {
+    text-decoration: none;
+    color: inherit;
+
+    .changeCity {
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'InterMedium';
+        color: #9d00ff;
+    }
+}
+
+.language {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #f1f1f1;
+    padding: 6px 5px;
+    cursor: pointer;
+
+    .languageIcon {
+        width: 20px;
+        height: auto;
+    }
+
+    span {
+        font-size: 13px;
+        font-weight: 300;
+        font-family: 'InterMedium';
+        color: rgb(107, 107, 107);
+    }
+}
+
+/* banner */
+
+.bannerAfterheader {
+    width: 100%;
+    height: auto;
+    background-image: url('../UzumImg/banner.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 23px;
+    margin-bottom: 20px;
+    background-color: #F1F1F1;
+    aspect-ratio: 3 / 1;
+}
+
+.arrowsBanner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 25px;
+    height: 400px;
+}
+
+.arrowsBanner button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* recomendations */
+
+.RecomendationsItemsToBuy {
+    display: flex;
+    height: auto;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    background-color: #F1F1F1;
+    border-radius: 23px;
+    margin-bottom: 20px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    h2 {
+        font-size: 22px;
+        font-family: 'InterBold';
+        padding: 30px 30px;
+    }
+}
