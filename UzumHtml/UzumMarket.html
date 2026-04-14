@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Market Place</title>
-    <link rel="stylesheet" href="/UzumCSS/UzumMarket.css">
-    <link rel="stylesheet" href="/UzumCSS/font.css">
+    <link rel="stylesheet" href="../UzumCSS/UzumMarket.css">
+    <link rel="stylesheet" href="../UzumCSS/font.css">
 </head>
 <body>
 
@@ -49,6 +49,12 @@
         </div>
     </header>
     <div class="locationAndlanguageDiv">
+        <div class="itemcategoriesFlexLanguage">
+            <a href="">Категории</a>
+            <a href="">Новинки</a>
+            <a href="">Распродажа</a>
+            <a href="">Бренды</a>
+        </div>
         <div class="locationAndLanguage">
             <span class="city">Москва</span>
             <span>•</span>
@@ -57,10 +63,12 @@
             </a>
             <span>•</span>
             <div class="language">
-                <div class="lang_picker">
-                    <img src="https://flagcdn.com/w20/ru.png" alt="RU" class="flag-icon">
-                    <span class="lang-text">RU</span>
-                </div>
+                <select class="lang_picker" name="" id="">
+                    <option class="chooseOptionLanguage" value="ru">RU</option>
+                    <option class="chooseOptionLanguage" value="en">EN</option>
+                    <option class="chooseOptionLanguage" value="uz">UZ</option>
+                    <option class="chooseOptionLanguage" value="ua">UA</option>
+                </select>
             </div>
         </div>
     </div>
@@ -74,8 +82,55 @@
             </button>
         </div>
     </div>
+    <div class="bannershortiesDIV">
+        <div class="bannershorties"></div>
+        <div class="bannershorties"></div>
+        <div class="bannershorties"></div>
+        <div class="bannershorties"></div>
+    </div>
     <div class="RecomendationsItemsToBuy">
         <h2>Рекомендации для вас</h2>
+        <div class="recomendationItemsDIV"></div>
     </div>
+    <div class="endFooterAboutMarketplace">
+        <div class="qrcodeAboutContacts">
+            <div class="QRcodeText">
+                <img src="" alt="">
+                <p>Наведите камеру и скачайте приложение</p>
+            </div>
+            <div class="AboutContactsData">
+                <a href="">Об маркетплейс</a>
+                <a href="">Контакты</a>
+                <a href="">Политика данных</a>
+            </div>
+            <div class="OplataOrderRefud">
+                <a href="">Оплата</a>
+                <a href="">Доставка</a>
+                <a href="">Возврат средств</a>
+            </div>
+            <div class="MapOzonPVZ">
+                <a href="">Посмотреть карту Озон</a>
+                <a href="">Пункты выдачи Озон</a>
+            </div>
+        </div>
+        <div class="OOOtearmsLinks">
+            <div class="TearmsAndPolitics">
+                <a href="">2026 ООО ("" ()). Все права защищены.</a>
+            </div>
+            <div class="LinksSocialMedia">
+                <a href="">
+                    <img src="" alt="Telegram">
+                </a>
+                <a href="">
+                    <img src="" alt="Instagram">
+                </a>
+                <a href="">
+                    <img src="" alt="VK">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../UzumJS/Uzum.js"></script>
 </body>
 </html>

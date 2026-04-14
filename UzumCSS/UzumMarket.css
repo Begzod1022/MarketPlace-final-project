@@ -6,7 +6,7 @@
 }
 
 body {
-    padding-inline: 7%;
+    padding-inline: 3%;
     padding-top: 1%;
 }
 
@@ -86,6 +86,11 @@ body {
         font-size: 14px;
         font-family: 'InterSemiBold';
     }
+
+    &:hover {
+        background-color: #7a00b3;
+        transition: ease-in-out 0.2s;
+    }
 }
 
 .SearchBar {
@@ -96,8 +101,13 @@ body {
         padding: 12px;
         margin: auto;
         border: 1px solid #ccc;
-        border-radius: 12px;
+        border-radius: 8px;
         transition: border-color 0.3s;
+        color: black;
+
+        &:hover {
+            cursor: pointer;
+        }
 
         &:focus {
             border-color: #9d00ff;
@@ -126,7 +136,7 @@ body {
 
     span {
         font-family: 'InterBold';
-        color: #8d8a8f;
+        color: #888888;
     
     }
 }
@@ -148,9 +158,10 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background: #f1f1f1;
     padding: 6px 5px;
     cursor: pointer;
+    background-color: #F1F1F1;
+    transition: 0.3s;
 
     .languageIcon {
         width: 20px;
@@ -165,9 +176,47 @@ body {
     }
 }
 
+.lang_picker {
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    outline: none;
+    font-size: 13px;
+
+    option {
+        border: none;
+        background: white;
+        color: #333;
+        padding: 10px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+}
+
+.itemcategoriesFlexLanguage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-family: 'InterMedium';
+
+    a {
+        text-decoration: none;
+        color: #888888;
+
+        &:hover {
+            color: #9d00ff;
+            transition: ease-in-out 0.4s;
+        }
+    }
+}
+
 /* banner */
 
 .bannerAfterheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: auto;
     background-image: url('../UzumImg/banner.png');
@@ -180,12 +229,12 @@ body {
 }
 
 .arrowsBanner {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    padding: 0 25px;
-    height: 400px;
+    padding: 0 30px;
 }
 
 .arrowsBanner button {
@@ -194,20 +243,40 @@ body {
     cursor: pointer;
 }
 
+/* banner shorties */
+
+.bannershortiesDIV {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.bannershorties {
+    width: 100%;
+    height: clamp(60px, 5vw, 150px);
+    background-color: #F1F1F1;
+    border-radius: 15px;
+}
+
 /* recomendations */
 
 .RecomendationsItemsToBuy {
     display: flex;
-    height: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
     width: 100%;
-    justify-content: start;
-    align-items: center;
+    height: auto;
     gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 10px;
     background-color: #F1F1F1;
     border-radius: 23px;
     margin-bottom: 20px;
+    padding: 25px 25px;
+    padding-bottom: 30px;
+    overflow-x: auto;
 
     &::-webkit-scrollbar {
         display: none;
@@ -216,6 +285,153 @@ body {
     h2 {
         font-size: 22px;
         font-family: 'InterBold';
-        padding: 30px 30px;
+    }
+}
+
+.recomendationItemsDIV {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    height: auto;
+    gap: clamp(10px, 5vw, 20px);
+}
+
+.recomendationItemMain {
+    width: calc(20% - 16px);
+    height: auto;
+    border-radius: 15px;
+}
+
+.recomendationItemIMG {
+    width: 100%;
+    aspect-ratio: 2 / 2.4;
+    overflow: hidden;
+    border-radius: 12px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.recomendationItemInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 7px;
+    padding: 10px 0px;
+
+    p {
+        font-size: 17px;
+        font-weight: 550;
+    }
+
+    .recomendationItemRatingAndComments {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        span {
+            font-size: 12px;
+            color: #676767;
+        }
+
+        .recomendationItemRating, .recomendationItemComments {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+        }
+    }
+}
+
+.recomendationItemPriceDIV {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.recomendationItemPriceCurrent {
+    font-size: 20px;
+    max-width: 130px;
+    color: #9d00ff;
+    font-family: 'InterBold';
+}
+
+.recomendationItemPriceOld {
+    font-size: 12px;
+    color: #8d8a8f;
+    text-decoration: line-through;
+}
+
+.recomendationItemDiscount {
+    font-size: 14px;
+    color: red;
+}
+
+/* endFooterAboutMarketplace */
+
+.endFooterAboutMarketplace {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.qrcodeAboutContacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    p {
+        color: #888888;
+    }
+}
+
+.QRcodeText, .AboutContactsData, .OplataOrderRefud, .MapOzonPVZ {
+    display: grid;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+
+    a {
+        text-decoration: none;
+        color: #888888;
+        font-weight: 100;
+        font-family: 'InterRegular';
+
+        &:hover {
+            color: #9d00ff;
+            transition: ease-in-out 0.2s;
+        }
+    }
+}
+
+
+.OOOtearmsLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0 0 0;
+    width: 100%;
+}
+
+.TearmsAndPolitics, .LinksSocialMedia {
+    a {
+        color: #9d00ff;
+        text-decoration: none;
     }
 }
