@@ -8,6 +8,7 @@
 body {
     padding-inline: 3%;
     padding-top: 1%;
+    background: #ffffff;
 }
 
 /* header */
@@ -47,6 +48,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 3px;
     font-size: 12px;
     font-weight: 400;
 }
@@ -134,63 +136,85 @@ body {
     font-size: 15px;
     font-weight: 400;
 
-    span {
+    .dotSpanVisualization {
         font-family: 'InterBold';
         color: #888888;
     
     }
 }
 
-.changeCityA {
-    text-decoration: none;
-    color: inherit;
-
-    .changeCity {
-        font-size: 14px;
-        font-weight: 400;
-        font-family: 'InterMedium';
-        color: #9d00ff;
-    }
+.cityChosen {
+    font-family: 'InterBold';
+    color: #888888;
 }
 
-.language {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 6px 5px;
+.changeCity {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'InterMedium';
+    color: #9d00ff;
     cursor: pointer;
-    background-color: #F1F1F1;
-    transition: 0.3s;
+    font-family: 'InterBold';
+}
 
-    .languageIcon {
-        width: 20px;
-        height: auto;
+.languageSelection {
+    position: relative;
+    background: #ededed;
+    cursor: pointer;
+    color: #7a00b3;
+}
+
+.langSelected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 4px 8px;
+    color: #9d00ff;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #f1f1f1;
     }
 
     span {
-        font-size: 13px;
-        font-weight: 300;
+        font-size: 12px;
         font-family: 'InterMedium';
-        color: rgb(107, 107, 107);
+        color: black;
     }
 }
 
-.lang_picker {
-    border: none;
-    padding: 6px 10px;
-    cursor: pointer;
-    outline: none;
-    font-size: 13px;
+.lang_list {
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    color: #7a00b3;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    z-index: 1000;
+}
 
-    option {
-        border: none;
-        background: white;
-        color: #333;
-        padding: 10px;
-        font-size: 13px;
-        cursor: pointer;
-    }
+.lang_list.open {
+    display: block;
+}
+
+.lang_list li.selected {
+    display: none;
+}
+
+.langSelected, .lang_list li {
+    cursor: pointer;
+}
+
+.languageFlagIcon {
+    width: 20px;
+    height: auto;
 }
 
 .itemcategoriesFlexLanguage {
@@ -199,10 +223,11 @@ body {
     align-items: center;
     gap: 15px;
     font-family: 'InterMedium';
+    font-size: 14px;
 
     a {
         text-decoration: none;
-        color: #888888;
+        color: #959494;
 
         &:hover {
             color: #9d00ff;
@@ -219,13 +244,14 @@ body {
     align-items: center;
     width: 100%;
     height: auto;
-    background-image: url('../UzumImg/banner.png');
     background-size: cover;
     background-position: center;
     border-radius: 23px;
     margin-bottom: 20px;
     background-color: #F1F1F1;
     aspect-ratio: 3 / 1;
+    background-size: cover;
+    background-position: center;
 }
 
 .arrowsBanner {
@@ -355,23 +381,32 @@ body {
 .recomendationItemPriceDIV {
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: baseline;
     gap: 5px;
     width: 100%;
     height: auto;
+    flex-wrap: nowrap;
 }
 
 .recomendationItemPriceCurrent {
+    flex-shrink: 0;
     font-size: 20px;
     max-width: 130px;
     color: #9d00ff;
     font-family: 'InterBold';
+    white-space: nowrap;
+    transform-origin: left center;
 }
 
 .recomendationItemPriceOld {
     font-size: 12px;
     color: #8d8a8f;
     text-decoration: line-through;
+    flex-shrink: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
 }
 
 .recomendationItemDiscount {
@@ -435,3 +470,4 @@ body {
         text-decoration: none;
     }
 }
+

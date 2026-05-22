@@ -2,7 +2,7 @@ const productsInRecomendation = [
     {
         imageOfProduct: "/images/mayka belaya.webp",
         name: "Майка Silver белый",
-        price: "21 567 UZS",
+        price: "23 456 UZS",
         oldPrice: "567 988 UZS",
         discount: "-96%",
         rating: "4.5",
@@ -112,3 +112,57 @@ productsInRecomendation.forEach(product => {
     recomendationItemMain.append(recomendationItemIMGDiv, recomendationItemInfo)
     recomendationItemsDIV.append(recomendationItemMain)
 })
+
+// Language Change and Selection
+
+const languageSelection = document.querySelector(".languageSelection");
+const langSelected = document.querySelector(".langSelected");
+const lang_list = document.querySelector(".lang_list");
+
+languageSelection.addEventListener("click", (event) => {
+    lang_list.classList.toggle('open')
+
+    stopPropagation(event);
+})
+
+window.addEventListener('click', (event) => {
+    if (!languageSelection.contains(event.target)) {
+        lang_list.classList.remove('open')
+    }
+})
+
+const disactive = document.querySelectorAll(".disactive");
+
+disactive.forEach(disactives => {
+    disactives.addEventListener('click', (event) => {
+        disactive.forEach(clearDisactive => {
+            if (clearDisactive.classList.contains('active')) {
+                clearDisactive.classList.replace('active', 'disactive')
+            }
+        })
+
+        disactives.classList.replace('disactive', 'active')
+        langSelected.innerHTML = disactives.innerHTML
+        lang_list.classList.remove('open')
+
+        event.stopPropagation();
+    })
+})
+
+// banner for marketplace main view
+
+const leftArrowToChangeBanner = document.querySelector(".leftArrowToChangeBanner");
+const rightArrowToChangeBanner = document.querySelector(".rightArrowToChangeBanner");
+const bannerAfterheader = document.querySelector('.bannerAfterheader')
+
+const bannerTemplates = [
+    "/images/banners/banner for marketplace 1.jpg",
+    "/images/banners/banner for marketplace 2.jpg",
+    "/images/banners/banner for marketplace 3.jpg"
+]
+
+let currentIndexForBannerImage = 0
+
+function changeImageBanner() {
+    
+}

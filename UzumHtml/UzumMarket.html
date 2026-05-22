@@ -56,28 +56,41 @@
             <a href="">Бренды</a>
         </div>
         <div class="locationAndLanguage">
-            <span class="city">Москва</span>
-            <span>•</span>
-            <a href="" class="changeCityA">
-                <span class="changeCity">Изменить город</span>
-            </a>
-            <span>•</span>
-            <div class="language">
-                <select class="lang_picker" name="" id="">
-                    <option class="chooseOptionLanguage" value="ru">RU</option>
-                    <option class="chooseOptionLanguage" value="en">EN</option>
-                    <option class="chooseOptionLanguage" value="uz">UZ</option>
-                    <option class="chooseOptionLanguage" value="ua">UA</option>
-                </select>
+            <span class="cityChosen">Москва</span>
+            <span class="dotSpanVisualization">•</span>
+            <span class="changeCity">Изменить город</span>
+            <div class="languageSelection">
+                <div class="langSelected">
+                    <img class="languageFlagIcon" src="https://flagcdn.com/w40/ru.png" alt="">
+                    <span>RU</span> 
+                </div>
+                <ul class="lang_list">
+                    <li data-value="RU" class="disactive">
+                        <img class="languageFlagIcon" src="https://flagcdn.com/w40/ru.png" alt="">
+                        <span>RU</span>
+                    </li>
+                    <li data-value="EN" class="disactive">
+                        <img class="languageFlagIcon" src="https://flagcdn.com/w40/gb.png" alt="">
+                        <span>EN</span>
+                    </li>
+                    <li data-value="UZ" class="disactive">
+                        <img class="languageFlagIcon" src="https://flagcdn.com/w40/uz.png" alt="">
+                        <span>UZ</span>
+                    </li>
+                    <li data-value="UA" class="disactive">
+                        <img class="languageFlagIcon" src="https://flagcdn.com/w40/ua.png" alt="">
+                        <span>UA</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="bannerAfterheader">
         <div class="arrowsBanner">
-            <button class="leftArrow">
+            <button class="leftArrowToChangeBanner">
                 <img src="/images/Left Arrow Banner.png" alt="">
             </button>
-            <button class="rightArrow">
+            <button class="rightArrowToChangeBanner">
                 <img src="/images/Right Arrow Banner.png" alt="">
             </button>
         </div>
@@ -130,6 +143,7 @@
             </div>
         </div>
     </div>
+    <img class="imageeee" src="" alt="">
 
     <script src="../UzumJS/Uzum.js"></script>
 </body>
