@@ -1,4 +1,4 @@
-const productsInRecomendation = [
+let productsInRecomendation = [
     {
         imageOfProduct: "/images/mayka belaya.webp",
         name: "Майка Silver белый",
@@ -113,7 +113,7 @@ productsInRecomendation.forEach(product => {
     recomendationItemsDIV.append(recomendationItemMain)
 })
 
-// Language Change and Selection
+// Language Change and Selection 
 
 const languageSelection = document.querySelector(".languageSelection");
 const langSelected = document.querySelector(".langSelected");
@@ -151,8 +151,8 @@ disactive.forEach(disactives => {
 
 // banner for marketplace main view
 
-const leftArrowToChangeBanner = document.querySelector(".leftArrowToChangeBanner");
 const rightArrowToChangeBanner = document.querySelector(".rightArrowToChangeBanner");
+const leftArrowToChangeBanner = document.querySelector(".leftArrowToChangeBanner");
 const bannerAfterheader = document.querySelector('.bannerAfterheader')
 
 const bannerTemplates = [
@@ -163,6 +163,60 @@ const bannerTemplates = [
 
 let currentIndexForBannerImage = 0
 
-function changeImageBanner() {
-    
+function updateBannerImg() {
+    bannerAfterheader.style.backgroundImage = `url('${bannerTemplates[currentIndexForBannerImage]}')`
 }
+
+rightArrowToChangeBanner.addEventListener('click', () => {
+    currentIndexForBannerImage++;
+
+    if (currentIndexForBannerImage >= bannerTemplates.length) {
+        currentIndexForBannerImage = 0
+    }
+
+    updateBannerImg()
+})
+
+leftArrowToChangeBanner.addEventListener('click', () => {
+    currentIndexForBannerImage--;
+
+    if (currentIndexForBannerImage < 0) {
+        currentIndexForBannerImage = bannerTemplates.length -1;
+    }
+
+    updateBannerImg()
+})
+
+// chooseCityModalWindow open //
+
+const chooseCityModalWindowBG = document.querySelector(".chooseCityModalWindowBG");
+const chooseCityModalWindow = document.querySelector(".chooseCityModalWindow");
+const changeCity = document.querySelector(".changeCity");
+const chooseCityModalWindowCloseButtonX = document.querySelector(".chooseCityModalWindowCloseButtonX");
+
+changeCity.addEventListener('click', (event) => {
+    chooseCityModalWindow.classList.toggle('open')
+    chooseCityModalWindowBG.classList.toggle('open')
+
+    event.stopPropagation();
+})
+
+chooseCityModalWindowCloseButtonX.addEventListener('click', () => {
+    chooseCityModalWindow.classList.remove('open')
+    chooseCityModalWindowBG.classList.remove('open')
+})
+
+// search for city input modal window
+
+let citiesToPickUp = [
+    Uzbekiatan = {
+        Toshkent, Andijon, Nukus, Samarkand, Xiva, Buxoro, Navoiy, Qashqadaryo, Surxandaryo
+    }, 
+
+    Russian = {
+        
+    }
+]
+
+const searchForCityInputModal = document.querySelector('.searchForCityInputModal')
+const cityNotAviableWindowInputError = document.querySelector('.cityNotAviableWindowInputError')

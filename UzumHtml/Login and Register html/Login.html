@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Uzum</title>
+    <link rel="stylesheet" href="/UzumCSS/Login and Register css/Login.css">
+</head>
+<body>
+    <form class="LoginMainStructurePoint">
+        <div class="MainLoginPart">
+            <h1>Welcome back 👋</h1>
+            <div class="EmailAndPasswordInput">
+                <div class="EmailInputDiv">
+                    <input class="EmailInput" type="text" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
+                    <p class="PleaseFillInputEmail">Please, fill email</p>
+                </div>
+                <div class="PasswordInputDiv">
+                    <input class="PasswordInput" type="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+                    <p class="PleaseFillInputPassword">Please, fill password</p>
+                </div>
+            </div>
+            <div class="ForgotPasswordDiv">
+                <a href="">Forgot Password?</a>
+            </div>
+            <div class="LogInButtonDiv">
+                <button type="submit">
+                    <p>Log In</p>
+                    <img src="/images/Login/Send_Icon.png" alt="">
+                </button>
+            </div>
+            <div class="DontHaveAnAccountDiv">
+                <p>Don't have an account?</p>
+                <a class="CreateAccountLinkButton" href="/UzumHtml/Login and Register html/Register.html">Sign Up</a>
+            </div>
+        </div>
+        <div class="PictureSecondPart">
+            <img src="/images/Login/login-bg.png" alt="">
+        </div>
+    </form>
+
+    <script src="/UzumJS/Login and Register js/auth.js"></script>
+</body>
+</html>

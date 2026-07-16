@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/UzumCSS/Login and Register css/Register.css">
+</head>
+<body>
+    <form class="RegisterForm" action="">
+        <div class="MainRegisterPart">
+            <h1>Welcome to Uzum👋</h1>
+            <div class="UserNameAndEmailInputDiv">
+                <div class="UserNameInputDiv">
+                    <input class="UserNameInput" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" type="text"></input>
+                    <p class="UserNameHelp">Set your name</p>
+                </div>
+                <div class="EmailInputDiv">
+                    <input class="EmailInput" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" type="email"></input>
+                    <p class="EmailHelp">Enter your email</p>
+                </div>
+                <div class="PasswordInputDiv">
+                    <input class="PasswordInput" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" type="password"></input>
+                    <p class="PasswordHelp">Should be at least 8 characters and 1 capital letter</p>
+                </div>
+            </div>
+            <div class="RegisterButtonDiv">
+                <a class="blankMainSiteLink" href="/UzumHtml/UzumMarket.html">
+                    <button type="submit" class="RegisterButton">Register</button>
+                </a>
+            </div>
+            <div class="LoginLinkP">
+                <p>Already have an account?</p>
+                <a href="/UzumHtml/Login and Register html/Login.html">Login</a>
+            </div>
+        </div>
+        <div class="MainPicPart">
+            <img src="/images/Login/login-bg.png" alt="">
+        </div>
+    </form>
+
+    <script src="/UzumJS/Login and Register js/Register.js"></script>
+</body>
+</html>

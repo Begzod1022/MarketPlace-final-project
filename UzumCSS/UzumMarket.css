@@ -9,6 +9,11 @@ body {
     padding-inline: 3%;
     padding-top: 1%;
     background: #ffffff;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* header */
@@ -148,6 +153,186 @@ body {
     color: #888888;
 }
 
+/* choose city Modal Window */
+
+.chooseCityModalWindowBG {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.chooseCityModalWindowBG.open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chooseCityModalWindow {
+    display: none;
+    /* gap: clamp(20px, 3vw, 20px); */
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    width: 600px;
+    height: auto;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    margin: auto;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.chooseCityModalWindow.open {
+    display: flex;
+    flex-direction: column;
+}
+
+.chooseCityModalWindowCloseButtonX {
+    position: absolute; 
+    top: 0;
+    right: 0;
+    margin: 30px;
+    cursor: pointer;
+    border: none;
+    background: none;
+
+    img {
+        width: 25px;
+    }
+}
+
+.chooseCityModalWindowTextH3 {
+    font-size: 25px;
+    font-family: 'InterBold';
+}
+
+.chooseCityModalWindowTextspan {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    padding: 20px 0px 10px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'InterMedium';
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.chooseCityModalWindowTextspanAttentionText {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'InterMedium';
+    color: #666666;
+
+    p {
+        font-size: 10px;
+    }
+}
+
+.chooseCityModalWindowFindCityInputandButtonMainDiv {
+    
+    span {
+        display: none;
+    }
+
+    span.open {
+        display: block;
+    }
+}
+
+.chooseCityModalWindowFindCityInputandButton {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 0px 10px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'InterMedium';
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.3s;
+        color: black;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+            cursor: text;
+        }
+    }
+
+    button {
+        border: none;
+        color: white;
+        font-family: 'InterSemiBold';
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 10px 15px;
+        background-color: #9d00ff;
+        cursor: pointer;
+    }
+}
+
+.chooseCityModalWindowItemListMainMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'InterMedium';
+    height: auto;
+    padding: 25px 0px 0px;
+}
+
+.chooseCityModalWindowItemListMainMenuCities  {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    padding: 20px 0;
+
+}
+
+.chooseCityModalWindowItemListMainMenuCitiesRussian, .chooseCityModalWindowItemListMainMenuCitiesUkraine {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    width: 100%;
+}
+
+.chooseCityModalWindowItemListMainMenuCitiesRussian, .chooseCityModalWindowItemListMainMenuCitiesUkraine, .chooseCityModalWindowItemListMainMenuCitiesUzbekistan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0px;
+    padding-right: 10px;
+    cursor: pointer;
+
+    &:hover {
+        transition: 0.2s ease-in-out;
+        color: #9d00ff;
+    }
+}
+
 .changeCity {
     font-size: 14px;
     font-weight: 400;
@@ -250,8 +435,14 @@ body {
     margin-bottom: 20px;
     background-color: #F1F1F1;
     aspect-ratio: 3 / 1;
+    background-image: url(/images/banners/banner\ for\ marketplace\ 1.jpg);
     background-size: cover;
     background-position: center;
+    cursor: pointer;
+
+    & {
+        transition: ease-out;
+    }
 }
 
 .arrowsBanner {
@@ -282,7 +473,7 @@ body {
 .bannershorties {
     width: 100%;
     height: clamp(60px, 5vw, 150px);
-    background-color: #F1F1F1;
+    background-color: #ededed;
     border-radius: 15px;
 }
 
