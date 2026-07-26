@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой аккаунт</title>
+    <link rel="stylesheet" href="../UzumCSS/Account Page.css">
+    <link rel="stylesheet" href="../UzumCSS/font.css">
+</head>
+<body>
+
+    <div class="AccountPage">
+        <aside class="AccountSidebar">
+            <a class="BackToMarketLink" href="UzumMarket.html">← На маркетплейс</a>
+            <div class="AccountAvatarBlock">
+                <div class="AccountAvatarWrapper">
+                    <div class="AccountAvatar" id="AccountAvatar"></div>
+                    <label class="AccountAvatarEditButton" for="avatarInput" title="Изменить фото">✎</label>
+                    <input type="file" id="avatarInput" accept="image/*" hidden>
+                </div>
+                <span class="AccountUsername" id="AccountUsername">Username</span>
+                <span class="AccountEmail" id="AccountEmail">email@example.com</span>
+            </div>
+            <nav class="AccountNav">
+                <button class="AccountNavButton active" data-tab="orders">Мои заказы</button>
+                <button class="AccountNavButton" data-tab="ratings">Мои отзывы</button>
+            </nav>
+            <button class="AccountLogoutButton" id="AccountLogoutButton">Выйти</button>
+        </aside>
+        <main class="AccountMain">
+            <section class="AccountSection active" id="ordersSection">
+                <h2>Мои заказы</h2>
+                <div class="AccountOrdersList" id="AccountOrdersList"></div>
+                <p class="AccountEmptyState" id="ordersEmptyState">У вас пока нет заказов</p>
+            </section>
+            <section class="AccountSection" id="ratingsSection">
+                <h2>Мои отзывы</h2>
+                <div class="AccountRatingsList" id="AccountRatingsList"></div>
+                <p class="AccountEmptyState" id="ratingsEmptyState">Вы пока не оставили ни одного отзыва</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="../UzumJS/Account Page.js"></script>
+</body>
+</html>

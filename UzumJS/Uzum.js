@@ -206,17 +206,55 @@ chooseCityModalWindowCloseButtonX.addEventListener('click', () => {
     chooseCityModalWindowBG.classList.remove('open')
 })
 
-// search for city input modal window
-
 let citiesToPickUp = [
-    Uzbekiatan = {
-        Toshkent, Andijon, Nukus, Samarkand, Xiva, Buxoro, Navoiy, Qashqadaryo, Surxandaryo
-    }, 
-
-    Russian = {
-        
-    }
+    Uzbekiatan = ["Toshkent", "Andijon", "Nukus", "Samarkand", "Xiva", "Buxoro", "Navoiy", "Qashqadaryo", "Surxandaryo"],
 ]
 
 const searchForCityInputModal = document.querySelector('.searchForCityInputModal')
 const cityNotAviableWindowInputError = document.querySelector('.cityNotAviableWindowInputError')
+
+document.addEventListener('DOMContentLoaded', function() {
+    const userNameSpan = document.querySelector(".userNameSpan");
+    const currentUserData = localStorage.getItem("currentUser")
+    const userAccoutButton = document.querySelector(".userAccoutButton")
+
+    let isUserLoggedIn = false
+    let savedUserName = ""
+
+    if (currentUserData) {
+        const user = JSON.parse(currentUserData)
+        isUserLoggedIn = true;
+        savedUserName = user.User_Name || user.UserName
+
+        if (userNameSpan && savedUserName) {
+            userNameSpan.textContent = savedUserName
+            isUserLoggedIn = true;
+        }
+
+    } else {
+
+        if (userNameSpan) {
+            userNameSpan.textContent = "Войти"
+        }
+    }
+
+    if (userAccoutButton) {
+        userAccoutButton.addEventListener('click', (event) => {
+            event.preventDefault()
+
+            if (isUserLoggedIn) {
+                console.log("Открываем модалку профиля для", savedUserName)
+                window.location.href = "/UzumHtml/Account Page.html"
+            } else {
+                window.location.href = "/UzumHtml/Login and Register html/Login.html"
+            }
+        })
+    }
+})
+
+const userAvatar = document.querySelector("#userAvatar");
+
+if (currentUserData) {
+    const user = JSON.parse(currentUserData)
+    userAvatar.src = user.avatar
+}

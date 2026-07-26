@@ -1,3 +1,5 @@
+const existingUsers = JSON.parse(localStorage.getItem("users")) || []
+
 const LoginMainStructurePoint = document.querySelector(".LoginMainStructurePoint");
 
 LoginMainStructurePoint.addEventListener("submit", function (event) {
@@ -33,8 +35,6 @@ LoginMainStructurePoint.addEventListener("submit", function (event) {
         if (PleaseFillInputPassword) PleaseFillInputPassword.style.visibility = 'hidden'
     }
 
-    const existingUsers = JSON.parse(localStorage.getItem("users")) || []
-
     const registeredUser = existingUsers.find(user => user.Email.toLowerCase() === email.toLowerCase())
 
     if (!registeredUser) {
@@ -64,5 +64,5 @@ LoginMainStructurePoint.addEventListener("submit", function (event) {
     if (emailInput) emailInput.value = "";
     if (passwordInput) passwordInput.value = "";
 
-    window.location.href = "/UzumHtml/UzumMarket.html"; 
+    window.location.href = "/UzumHtml/UzumMarket.html";
 })

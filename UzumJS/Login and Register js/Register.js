@@ -48,6 +48,7 @@ RegisterForm.addEventListener("submit", function (event) {
     }
 
     const NewUserData = {
+        User_Name: UserName,
         Email: Email,
         password: Password
     }
@@ -70,11 +71,13 @@ RegisterForm.addEventListener("submit", function (event) {
 
     localStorage.setItem("users", JSON.stringify(existingUsers))
 
+    localStorage.setItem("currentUser", JSON.stringify(NewUserData))
+
     console.log("Данные нового пользователя сохранены:", NewUserData);
 
     window.location.href = "/UzumHtml/UzumMarket.html"
 
     if (UserNameInput) UserNameInput.value = "";
     if (EmailInput) EmailInput.value = "";
-    if (PasswordInput) PasswordInput.value = ""
+    if (PasswordInput) PasswordInput.value = "";
 }) 
